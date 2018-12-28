@@ -1,10 +1,22 @@
-.main {
+:root {
+        --gray: #7B7D7F;
+        --blue: #588FFF;
+        --white: #F7FAFF;
+        --dark-blue: #55637F;
+        --light-gray: #C5C8CC;
+}
+
+body {
+        margin: 0px;
+}
+
+main {
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        
+        /*
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -13,17 +25,83 @@
         flex-flow: column nowrap;
         align-items: center;
         justify-content:  center;
-        
+        */
         font-family: sans-serif;
-        text-align: center;
-        background-color: skyblue;
+        background-color: var(--white);
+}
+header {
+        position: absolute;
+        display: flex;
+        flex-flow: row nowrap;
+        background-color: transparent;
+        top: 20px;
+        left: 0;
+        right: 0;
+        padding: 0px 50px
 }
 
-.avatar {
+a {
+        text-decoration: none;
+}
+
+a:hover {
+        text-decoration: underline;
+}
+
+#main-menu ul {
+        margin: 0px;
+        padding: 0;
+        list-style: none;
+}
+
+#main-menu ul li {
+        display: inline-block;
+
+}
+
+#main-menu ul li a {
+        font-family: monospace;
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        position: relative;
+}
+
+#main-menu ul li:not(:first-child) {
+        margin-left: 20px;
+}
+
+#main-menu ul li:not(:first-child) > a:after{
+        content: "";
+        position: absolute;
+        right: 0;
         display: block;
-        width: 200px;
-        height: 200px;
-        border-radius: 100px;
+        width: 0;
+        height: 2px;
+        background-color: var(--blue);
+        transition: width .2s ease;
+        -web-kit-transition: width .2s ease;
+}
+
+#main-menu ul li:not(:first-child) > a:hover:after{
+        content: "";
+        width: 100%;
+        left: 0;
+}
+
+#main-banner img{
+        width: 100%;
+        height: auto;
+}
+
+header .avatar-logo {
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+}
+
+header .logo {
+        margin-right: 20px;
 }
 
 .under-construction{
