@@ -74,6 +74,7 @@ a:hover {
 #main-menu ul li:not(:first-child) > a:after{
         content: "";
         position: absolute;
+        margin-top: 5px;
         right: 0;
         display: block;
         width: 0;
