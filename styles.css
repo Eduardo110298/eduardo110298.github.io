@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300,400,500');
+@import url('normalize.css');
+
 :root {
         --gray: #7B7D7F;
         --blue: #588FFF;
@@ -6,11 +9,8 @@
         --light-gray: #C5C8CC;
 }
 
-body {
-        margin: 0px;
-}
-
 main {
+        z-index: 1;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -26,10 +26,11 @@ main {
         align-items: center;
         justify-content:  center;
         */
-        font-family: sans-serif;
         background-color: var(--white);
 }
+
 header {
+        z-index: 2;
         position: absolute;
         display: flex;
         flex-flow: row nowrap;
@@ -37,7 +38,8 @@ header {
         top: 20px;
         left: 0;
         right: 0;
-        padding: 0px 50px
+        padding: 0px 50px;
+        font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 a {
@@ -60,7 +62,6 @@ a:hover {
 }
 
 #main-menu ul li a {
-        font-family: monospace;
         display: inline-block;
         text-decoration: none;
         color: black;
