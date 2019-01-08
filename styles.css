@@ -18,7 +18,7 @@
 }
  
 ::-webkit-scrollbar-thumb {
-  background: var(--gray);
+  background: var(--light-gray);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -46,6 +46,8 @@ main {
         z-index: 2;
         position: relative;
         background-color: var(--white);
+        margin-bottom: 100px;
+        box-shadow: 0px 0px 15px #434343;
 }
 
 footer  {
@@ -185,23 +187,10 @@ a {
         line-height: 150%;
 }
 
-@media only screen and (min-width: 992px) {
-        #welcome {
-                padding: 50px 100px 0 100px;
-        }
-}
-
-@media only screen and (min-width: 1200px) {
-        #welcome {
-                padding: 50px 0 0 0;
-        }       
-}
-
 #gradient-layer {
-        box-shadow: 0px 4px 3px #434343;
         background: linear-gradient(to bottom, var(--white), var(--light-gray));
         height: 100px;
-        margin: 0 0 100px 0;
+        margin: 0;
 }
 
 #mobile-menu-button {
@@ -233,9 +222,7 @@ a {
 
 #mobile-menu {
         box-shadow: 0px 0px 15px #434343;
-        transition: opacity .2s ease;
-        z-index: 1;
-        opacity: 0;
+        z-index: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -243,35 +230,42 @@ a {
         top: 0;
         bottom: 0;
         right: 0;
-        width: 75vw;
-        background-color: white
+        width: 0;
+        background-color: var(--white);
+        transition: width .5s ease;
+}
+
+#mobile-menu.visible {
+        width: 75vw!important;
 }
 
 @media (min-width: 576px) {
-        #mobile-menu {
-                width: 50vw;
+        #mobile-menu.visible {
+                width: 50vw!important;
         }
 }
 
 @media (min-width: 992px) {
-        #mobile-menu {
-                width: 35vw;
+        #mobile-menu.visible {
+                width: 35vw!important;
         }
 }
 
 #mobile-menu ul {
         list-style: none;
+        width: 0;
         padding: 0;
         margin: 0;
+        transition: width .5s ease;
+}
+
+#mobile-menu.visible ul {
+        width: auto;
 }
 
 #mobile-menu ul li a {
         text-decoration: none;
         color: var(--gray);
-}
-
-.visible {
-        opacity: 1!important;
 }
 
 footer .container {
@@ -286,18 +280,6 @@ footer .container {
         footer .container {
                  flex-direction: row;
         }
-}
-
-@media only screen and (min-width: 992px) {
-        footer .container {
-                 max-width: 768px;
-        }
-}
-
-@media only screen and (min-width: 1200px) {
-        footer .container {
-                 max-width: 1140px;
-        }       
 }
 
 .footer-text i.fas {
@@ -346,4 +328,15 @@ footer .container {
         .show-xs {
                 display: none; 
         }
+}
+
+#pre-footer {
+        background: var(--gray);
+}
+
+#pre-footer .container {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 15px;
+        padding-bottom: 15px;
 }
